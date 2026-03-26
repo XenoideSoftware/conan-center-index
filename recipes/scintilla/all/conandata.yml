@@ -1,0 +1,46 @@
+sources:
+  "5.5.8":
+    url: "https://www.scintilla.org/scintilla558.tgz"
+    sha256: "d1a7d4d2228fedf94306baf674c847bdb7639cdb56508aff8f178b95c72b5a67"
+  "5.5.7":
+    url: "https://www.scintilla.org/scintilla557.tgz"
+    sha256: "b37e1a239ff8c77cebd72db6ce25264b35cbecbbffad60f9ce7e838f5195a21e"
+  "5.5.6":
+    url: "https://www.scintilla.org/scintilla556.tgz"
+    sha256: "d6eda23a127f4987f0509fda8bf649e6ee2c888e1c6fc5530a40b248c9dd289b"
+  "5.5.5":
+    url: "https://www.scintilla.org/scintilla555.tgz"
+    sha256: "0941a8c309a172da9cbb2a2731f97950cb60446cb4709073f9e296e9a6d4c1ae"
+  "5.5.4":
+    url: "https://www.scintilla.org/scintilla554.tgz"
+    sha256: "7994a854a3012269f35ecc2cb725b8f7e209e410dc96fe141c9a15ccfebd41fc"
+  "5.5.3":
+    url: "https://www.scintilla.org/scintilla553.tgz"
+    sha256: "a723be93a541fbdc4919e49ed29080c2a5124f6306d335aa720ca4234ce4b414"
+  "5.5.2":
+    url: "https://www.scintilla.org/scintilla552.tgz"
+    sha256: "a1da870ba77b5a7ae0a636ba00ae8fa7f30a70143f137632420cea85b7524982"
+  "5.5.1":
+    url: "https://www.scintilla.org/scintilla551.tgz"
+    sha256: "fd634ac73ec2a00cda170a2fbc477250090621367bbb03a32ba782b9944277e7"
+  "5.5.0":
+    url: "https://www.scintilla.org/scintilla550.tgz"
+    sha256: "e553e95509f01f92aa157fa02d06a712642e13d69a11ec1a02a7ddf22c406231"
+  "5.4.3":
+    url: "https://www.scintilla.org/scintilla543.tgz"
+    sha256: "32167c3e7bedd977be4c39bc9ad3f5e1b52c53def205546c2d9c84a7738a4dfb"
+  "5.4.2":
+    url: "https://www.scintilla.org/scintilla542.tgz"
+    sha256: "24f3488d2b7157fa8aeafdee8e8effa82cb8b7f77d5897e21ae16d6a18d05973"
+  "5.4.1":
+    url: "https://www.scintilla.org/scintilla541.tgz"
+    sha256: "752a859b5b5bfbe7dd189ece747b20d8daa2bca73e98bcf8bf1e72f29ce14d5e"
+  "5.4.0":
+    url: "https://www.scintilla.org/scintilla540.tgz"
+    sha256: "10cceacc885546cc8374e0b519cf1152fbcbda6e5b54d4daea34cc300d1e9a43"
+  "5.3.7":
+    url: "https://www.scintilla.org/scintilla537.tgz"
+    sha256: "e75120a74e3266eb50b07c91e14503d736a716958361b20751d7de9ee03c1954"
+  "5.3.6":
+    url: "https://www.scintilla.org/scintilla536.tgz"
+    sha256: "89be8278a83e7813925aafe2977daab87d2bd6bebd17b0179fe72afdd548cb24"

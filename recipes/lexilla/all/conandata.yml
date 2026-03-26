@@ -1,0 +1,4 @@
+sources:
+  "5.4.6":
+    url: "https://www.scintilla.org/lexilla546.tgz"
+    sha256: "737bf8f8f399dec0f925e5dfb8bf46ba60e0c74f83718862fe621ed83770f265"
