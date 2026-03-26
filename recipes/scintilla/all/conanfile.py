@@ -32,7 +32,8 @@ class ScintillaConanfile(ConanFile):
 
     def build_requirements(self):
         self.tool_requires("qt/<host_version>")
-        self.tool_requires("cpython/[>=3.12]", options={"shared": True})
+        self.tool_requires("cpython/[>=3.10]", options={"shared": True})
+        self.tool_requires("qmake2cmake/[>=1.0.8]")
 
     def layout(self):
         cmake_layout(self, src_folder="src")
@@ -53,14 +54,6 @@ class ScintillaConanfile(ConanFile):
 
         return python_exe
 
-    def _get_qmake2cmake_exe(self):
-        """Get the qmake2cmake executable path from the cpython build dependency."""
-        cpython_root = self.dependencies.build["cpython"].package_folder
-
-        if self.settings.os == "Windows":
-            return os.path.join(cpython_root, "bin", "Scripts", "qmake2cmake.exe")
-        return os.path.join(cpython_root, "bin", "qmake2cmake")
-
     def _get_cpython_env(self):
         """Create an Environment with cpython's shared library path."""
         cpython_lib = os.path.join(self.dependencies.build["cpython"].package_folder, "lib")
@@ -80,21 +73,15 @@ class ScintillaConanfile(ConanFile):
             self.run(f'"{python_exe}" "{os.path.basename(script)}"', cwd=os.path.dirname(script))
 
     def _generate_scintilla_cmakelists(self):
-        """Use qmake2cmake to generate CMakeLists.txt for each Qt module."""
-        python_exe = self._get_python_exe()
-        qmake2cmake_exe = self._get_qmake2cmake_exe()
-
-        with self._get_cpython_env().apply():
-            self.run(f'"{python_exe}" -m pip install qmake2cmake')
-
-            for module in scintilla_qt_modules:
-                pro_file = os.path.join(self.source_folder, "qt", module, f"{module}.pro")
-                module_dir = os.path.join(self.source_folder, "qt", module)
-                if not os.path.isfile(pro_file):
-                    self.output.warning(f".pro file not found for module {module}: {pro_file}")
-                    continue
-                self.output.info(f"Generating CMakeLists.txt for {module} using qmake2cmake")
-                self.run(f'"{qmake2cmake_exe}" --min-qt-version 6.8 "{pro_file}"', cwd=module_dir)
+        """Use qmake2cmake (from tool_requires) to generate CMakeLists.txt for each Qt module."""
+        for module in scintilla_qt_modules:
+            pro_file = os.path.join(self.source_folder, "qt", module, f"{module}.pro")
+            module_dir = os.path.join(self.source_folder, "qt", module)
+            if not os.path.isfile(pro_file):
+                self.output.warning(f".pro file not found for module {module}: {pro_file}")
+                continue
+            self.output.info(f"Generating CMakeLists.txt for {module} using qmake2cmake")
+            self.run(f'qmake2cmake --min-qt-version 6.8 "{pro_file}"', cwd=module_dir, env="conanbuild")
 
     def _patch_generated_cmakelists(self):
         """Replace Qt:: with Qt6:: in generated CMakeLists.txt files.
