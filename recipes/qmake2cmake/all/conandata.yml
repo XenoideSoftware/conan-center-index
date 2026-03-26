@@ -1,0 +1,7 @@
+sources:
+  "1.0.8":
+    url: "https://files.pythonhosted.org/packages/82/0c/e85b4356297d64f0f0d924db35fef0a7051bd42fade096138a97ab1825ae/qmake2cmake-1.0.8.tar.gz"
+    sha256: "2136dd2327b7b24ce02300a727b49b3b4fa022110d9d87a2f05bcd1bcc2f282d"
+  "1.0.7":
+    url: "https://files.pythonhosted.org/packages/f9/bf/ccecc826924bcc3c999e92a4bebf14fc534a8f95905a63cd00ee5985338e/qmake2cmake-1.0.7.tar.gz"
+    sha256: "29675a9bfb6ae3f340309c82c7c28edb76c9bc1579eb078761296a63c95aeea6"
